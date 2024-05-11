@@ -1,0 +1,36 @@
+version: '1'
+
+services:
+  server:
+    container_name: server
+    image: docker:latest
+    privileged: true
+    restart: unless-stopped
+    networks:
+      server-net:
+        ipv4_address: 172.18.0.2
+    ports:
+      # Expose servisers
+      - "7500:3000"
+      - "7501:4000"
+      - "7502:5000"
+      - "7503:6000"
+      - "7504:8080"
+      - "7505:9000"
+      # Expose webtop GUI
+      - "8500:6969"
+      # Expose databases
+      - "9500:3306"
+      - "9501:27017"
+      # Expose portainer
+      - "8000:8000"
+      - "9443:9443"
+      
+networks:
+  server-net:
+    name: server-net
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16

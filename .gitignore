@@ -1,0 +1,4 @@
+./src/.ansible
+./src/.terraform.d
+./ash_history
+./src/terraform/modules

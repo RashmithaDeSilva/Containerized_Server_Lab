@@ -3,6 +3,7 @@
 # Set up for alpine docker containers
 
 
+apk update && apk upgrad
 wget https://releases.hashicorp.com/terraform/1.8.3/terraform_1.8.3_linux_amd64.zip
 unzip terraform_1.8.3_linux_amd64.zip
 mv terraform /usr/local/bin/

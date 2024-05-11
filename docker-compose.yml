@@ -16,7 +16,7 @@ services:
       - ./src:/root
     ports:
       # Expose servisers
-      - "7500:8080"
+      - "7500:8080" # Jenkins
       - "7501:3000"
       - "7502:4000"
       - "7503:5000"

@@ -9,6 +9,9 @@ services:
     networks:
       server-net:
         ipv4_address: 172.18.0.2
+    volumes:
+      - server_data:/var/lib/docker
+      - ./src:/root
     ports:
       # Expose servisers
       - "7500:3000"
@@ -34,3 +37,6 @@ networks:
       driver: default
       config:
         - subnet: 172.18.0.0/16
+
+volumes:
+  server_data:

@@ -23,6 +23,7 @@ resource "docker_container" "jenkins_container" {
   restart   = "unless-stopped"
   tty         = true
   stdin_open = true
+  start       = true
   volumes {
     volume_name    = docker_volume.jenkins_volume.name
     container_path = "/var/jenkins_home"
@@ -38,6 +39,7 @@ resource "docker_container" "portainer_container" {
   restart   = "always"
   tty         = true
   stdin_open = true
+  start       = true
   ports {
     internal = 8000
     external = 8000

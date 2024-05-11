@@ -5,13 +5,13 @@ resource "docker_image" "jenkins_image" {
 
 # Create volume
 resource "docker_volume" "jenkins_volume" {
-  name = "jenkins_volume"
+  name = "jenkins_data"
 }
 
 # Create a container
 resource "docker_container" "jenkins_container" {
   image     = docker_image.jenkins/jenkins.name
-  name      = "jenkins_con"
+  name      = "jenkins"
   restart   = "unless stopped"
   volumes {
     volume_name    = docker_volume.jenkins_volume.name

@@ -43,3 +43,4 @@ src/.terraform.d/checkpoint_cache
 src/.terraform.d/checkpoint_signature
 src/terraform/.terraform.lock.hcl
 src/.ash_history
+src/projects

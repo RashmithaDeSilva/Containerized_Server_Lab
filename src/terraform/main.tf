@@ -29,8 +29,13 @@ resource "docker_container" "jenkins_container" {
     container_path = "/var/jenkins_home"
   }
   volumes {
+    # Connect with docker
     host_path      = "/var/run/docker.sock"
     container_path = "/var/run/docker.sock"
+  }
+  volumes {
+    host_path      = "/root/projects"
+    container_path = "/projects"
   }
   ports {
     internal = 8080
